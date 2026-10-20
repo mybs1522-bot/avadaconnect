@@ -1,8 +1,37 @@
 import { USER } from "@/data/user";
 
+function getSiteUrl(): string {
+  const envUrl = process.env.APP_URL?.trim();
+  // Ensure envUrl is not a placeholder with brackets or invalid URL syntax
+  if (envUrl && !envUrl.includes("<") && !envUrl.includes(">")) {
+    try {
+      const candidate = envUrl.startsWith("http://") || envUrl.startsWith("https://")
+        ? envUrl
+        : `https://${envUrl}`;
+      const parsed = new URL(candidate);
+      return parsed.origin;
+    } catch {
+      // Ignore invalid URL
+    }
+  }
+
+  // Fallback to Vercel production or deployment URL automatically provided by Vercel
+  const vercelProd = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (vercelProd && !vercelProd.includes("<")) {
+    return `https://${vercelProd}`;
+  }
+
+  const vercelUrl = process.env.VERCEL_URL?.trim();
+  if (vercelUrl && !vercelUrl.includes("<")) {
+    return `https://${vercelUrl}`;
+  }
+
+  return "http://localhost:3000";
+}
+
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.APP_URL || "http://localhost:3000",
+  url: getSiteUrl(),
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,

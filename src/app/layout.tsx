@@ -19,8 +19,16 @@ function getWebSiteJsonLd(): WithContext<WebSite> {
   };
 }
 
+function getMetadataBase(): URL {
+  try {
+    return new URL(SITE_INFO.url);
+  } catch {
+    return new URL("http://localhost:3000");
+  }
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_INFO.url),
+  metadataBase: getMetadataBase(),
   alternates: {
     canonical: "/",
   },
