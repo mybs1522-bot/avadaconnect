@@ -241,7 +241,7 @@ export function ReviewsTab() {
         }
       }
       await fetchReviews();
-      toast.success("All 13 homepage reviews loaded & synced!");
+      toast.success("Homepage reviews loaded & synced!");
     } catch {
       toast.error("Failed to sync reviews");
     } finally {
@@ -278,7 +278,7 @@ export function ReviewsTab() {
             className="gap-1.5 text-xs text-primary border-primary/40 hover:bg-primary/10"
           >
             <RefreshCw className={`size-3.5 ${loading ? "animate-spin" : ""}`} />
-            Sync All 13 Live Reviews
+            Sync All Live Reviews
           </Button>
           <Button size="sm" onClick={openAddDialog} className="gap-1.5 text-xs">
             <Plus className="size-4" />
@@ -319,7 +319,7 @@ export function ReviewsTab() {
                     className="gap-1.5 text-xs"
                   >
                     <RefreshCw className="size-3.5" />
-                    Load All 13 Client Reviews from Website
+                    Load All Live Client Reviews from Website
                   </Button>
                 </TableCell>
               </TableRow>

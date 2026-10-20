@@ -4,7 +4,8 @@ export const REVIEWS: Review[] = [
   // Row 1 - Static
   {
     id: "r1",
-    content: "The consultation call literally saved us over ₹6 Lakhs! Aryan broke down the actual material rates and itemized BOQ so our contractor couldn't inflate prices.",
+    content:
+      "The consultation call with AVADASPACE literally saved us over ₹6 Lakhs! Their team broke down actual material rates and itemized the BOQ so our contractor couldn't inflate prices on the structural package.",
     rating: 5,
     author: {
       name: "Aman Singhania",
@@ -15,7 +16,8 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "r2",
-    content: "Loved the direct, transparent approach. No pushing expensive vendor tie-ups, just pure functional design and sustainable material alternatives.",
+    content:
+      "Loved the direct, transparent approach by AVADASPACE. No pushing expensive vendor tie-ups—just pure functional design, ingenious spatial flow, and sustainable material alternatives.",
     rating: 5,
     author: {
       name: "Rishi Vardhan",
@@ -26,10 +28,11 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "r3",
-    content: "Aryan gave us exceptional guidelines on selecting contractors and key milestone payment clauses to avoid project delays. Highly recommend him!",
+    content:
+      "AVADASPACE gave us exceptional guidelines on selecting contractors and structuring milestone payment clauses. Their turnkey oversight ensured our handover happened right on schedule without cost overruns.",
     rating: 5,
     author: {
-      name: "Shruti & Vikram",
+      name: "Shruti & Vikram Malhotra",
       title: "Penthouse Clients, Pune",
       avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=ShrutiVikram",
       verified: true,
@@ -39,7 +42,8 @@ export const REVIEWS: Review[] = [
   // Row 2 - Scrolling left
   {
     id: "r4",
-    content: "Within 20 minutes, Aryan pointed out a massive structural column conflict in our builder's drawing that would have ruined our living room lighting.",
+    content:
+      "Within 20 minutes of review, AVADASPACE identified a critical structural column conflict in our builder's floor plan that would have ruined our living room lighting. Truly world-class space planning.",
     rating: 5,
     author: {
       name: "Kabir Sen",
@@ -50,18 +54,20 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "r5",
-    content: "Studio Mehta taught us how to actually audit site work and verify MEP (mechanical/electrical) ducting before closing false ceilings. Lifesaver!",
+    content:
+      "AVADASPACE taught us how to systematically audit site progress and verify MEP and HVAC ducting before sealing false ceilings. Their site coordination standards are the best in the industry.",
     rating: 5,
     author: {
       name: "Tanya Kapoor",
-      title: "Homeowner, Gurugram",
+      title: "Luxury Homeowner, Gurugram",
       avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=TanyaKapoor",
       verified: true,
     },
   },
   {
     id: "r6",
-    content: "Super easy to communicate with. Felt like having a trusted principal architect on speed dial who genuinely cares about your budget.",
+    content:
+      "Collaborating with AVADASPACE was effortless. Having their principal designers available for critical decision points gave us absolute peace of mind throughout our coastal build.",
     rating: 5,
     author: {
       name: "Sahil Deshmukh",
@@ -72,7 +78,8 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "r7",
-    content: "No sugarcoating, just real architectural insight on what materials last long in coastal climates. Worth 10x the consultation fee.",
+    content:
+      "No fluff, just deep architectural expertise on micro-climate responsive designs and weather-resistant materials for heavy monsoon areas. AVADASPACE is worth every rupee.",
     rating: 5,
     author: {
       name: "Meghna Nair",
@@ -83,7 +90,8 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "r8",
-    content: "The BOQ review was immaculate. We caught several redundant items in the HVAC estimate. Absolute game changer.",
+    content:
+      "The BOQ and procurement audit by AVADASPACE was immaculate. We eliminated several redundant specifications in our commercial HVAC and acoustic quotes. Total game changer.",
     rating: 5,
     author: {
       name: "Ravi Teja",
@@ -96,7 +104,8 @@ export const REVIEWS: Review[] = [
   // Row 3 - Scrolling right
   {
     id: "r9",
-    content: "We were about to overspend significantly on imported marble. Aryan suggested Indian composite stones that look identical and cost 60% less.",
+    content:
+      "We were about to overspend heavily on imported Italian marble until AVADASPACE curated stunning Indian composite stones that look identical and cost 60% less with zero maintenance headaches.",
     rating: 5,
     author: {
       name: "Dhruv Merchant",
@@ -107,7 +116,8 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "r10",
-    content: "Clear, direct, and visionary. He re-imagined our master suite layout to incorporate cross ventilation and maximum natural morning light.",
+    content:
+      "Clear, visionary, and detail-oriented. AVADASPACE re-imagined our 4-BHK master suite to maximize natural daylighting, cross-ventilation, and seamless hidden storage.",
     rating: 5,
     author: {
       name: "Kritika Malhotra",
@@ -118,7 +128,8 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "r11",
-    content: "Aryan's e-book on turnkey budgeting is gold. We used his contractor evaluation checklist and saved thousands on timber framing.",
+    content:
+      "AVADASPACE's turnkey budgeting guidance and contractor evaluation checklists saved us months of headaches. Their structural layout optimization was precision engineering at its finest.",
     rating: 5,
     author: {
       name: "Varun Sharma",
@@ -129,23 +140,37 @@ export const REVIEWS: Review[] = [
   },
   {
     id: "r12",
-    content: "The invoice and estimation templates from Studio Mehta made dealing with vendors 100% dispute-free. Fantastic work!",
+    content:
+      "AVADASPACE transformed our commercial space into a visually captivating, ergonomic haven. Vendor management was smooth and the tactile material selection received endless compliments.",
     rating: 4,
     author: {
       name: "Simran Johar",
-      title: "Interior Client, Mumbai",
+      title: "Boutique Cafe Founder, Mumbai",
       avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=SimranJohar",
       verified: true,
     },
   },
   {
     id: "r13",
-    content: "Unmatched aesthetic sense combined with practical civil engineering knowledge. Highly recommended to anyone building their dream home.",
+    content:
+      "Unmatched aesthetic sensibility combined with solid civil engineering rigor. AVADASPACE delivered our weekend retreat with immaculate attention to landscape integration.",
     rating: 5,
     author: {
       name: "Karan Oberoi",
-      title: "Farmhouse Owner, Alibaug",
+      title: "Farmhouse Estate, Alibaug",
       avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=KaranOberoi",
+      verified: true,
+    },
+  },
+  {
+    id: "r14",
+    content:
+      "From initial concept renders to final turnkey handoff, AVADASPACE exceeded every expectation. Their lighting design and bespoke custom joinery transformed our home into a work of art.",
+    rating: 5,
+    author: {
+      name: "Ananya & Dev Mehta",
+      title: "Lakeview Villa, Udaipur",
+      avatar: "https://api.dicebear.com/9.x/avataaars/svg?seed=AnanyaDev",
       verified: true,
     },
   },
@@ -154,15 +179,15 @@ export const REVIEWS: Review[] = [
 // Split reviews into 3 rows
 export const REVIEWS_ROW_1 = REVIEWS.slice(0, 3);
 export const REVIEWS_ROW_2 = REVIEWS.slice(3, 8);
-export const REVIEWS_ROW_3 = REVIEWS.slice(8, 13);
+export const REVIEWS_ROW_3 = REVIEWS.slice(8, 14);
 
 export const TOTAL_REVIEWS = 127;
 export const AVERAGE_RATING = 4.9;
 
 export const RATING_DISTRIBUTION = [
-  { star: 5, count: 115 },
-  { star: 4, count: 10 },
-  { star: 3, count: 2 },
+  { star: 5, count: 118 },
+  { star: 4, count: 9 },
+  { star: 3, count: 0 },
   { star: 2, count: 0 },
   { star: 1, count: 0 },
 ];
