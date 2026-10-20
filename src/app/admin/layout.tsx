@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { BuiltBy } from "@/components/built-by";
 import { ToggleTheme } from "@/components/toggle-theme";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-200">
       <header className="border-b border-border bg-card/60 backdrop-blur-md sticky top-0 z-30">
         <div className="w-full max-w-[98%] xl:max-w-[1700px] mx-auto flex items-center justify-between px-4 sm:px-6 py-3.5">
           <div className="flex items-center gap-3">
@@ -35,9 +36,12 @@ export default function AdminLayout({
           </div>
         </div>
       </header>
-      <main className="w-full max-w-[98%] xl:max-w-[1700px] mx-auto px-4 sm:px-6 py-6">
+      <main className="w-full max-w-[98%] xl:max-w-[1700px] mx-auto px-4 sm:px-6 py-6 flex-1">
         {children}
       </main>
+      <footer className="w-full border-t border-border/40 py-4 flex items-center justify-center">
+        <BuiltBy pill className="opacity-80 hover:opacity-100" />
+      </footer>
     </div>
   );
 }
