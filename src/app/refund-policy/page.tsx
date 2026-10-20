@@ -18,9 +18,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Cancellation & Refund Policy | Ar. Aryan Mehta",
+  title: "Cancellation & Refund Policy | AVADASPACE",
   description:
-    "Official cancellation and refund policy for architectural consultations, 3D design services, and digital resources by Studio Mehta & Partners.",
+    "Official cancellation and refund policy for architectural consultations, 3D design services, and digital resources by AVADASPACE.",
 };
 
 export default function RefundPolicyPage() {
@@ -37,7 +37,7 @@ export default function RefundPolicyPage() {
             <span>Back to Home</span>
           </Link>
 
-          <Link href="/" aria-label="Ar. Aryan Mehta Home">
+          <Link href="/" aria-label="AVADASPACE Home">
             <ChanhDaiMark className="h-7" />
           </Link>
 
@@ -69,7 +69,7 @@ export default function RefundPolicyPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl leading-relaxed">
-            Please read this policy carefully before booking a consultation call or ordering custom architectural &amp; interior design services with Studio Mehta &amp; Partners.
+            Please read this policy carefully before booking a consultation call or ordering custom architectural &amp; interior design services with AVADASPACE.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export default function RefundPolicyPage() {
               1. Overview &amp; Commitment to Transparency
             </h2>
             <p>
-              At Studio Mehta &amp; Partners Architectural &amp; Interior Design Studio, we pride ourselves on providing bespoke, high-touch consultation, spatial planning, floor plans, and 3D concept designs. Because professional architectural advisory and design drafting involve extensive allocation of expert time, creative resources, and individualized technical analysis, our refund parameters are strictly defined below.
+              At AVADASPACE Architectural &amp; Interior Design Studio, we pride ourselves on providing bespoke, high-touch consultation, spatial planning, floor plans, and 3D concept designs. Because professional architectural advisory and design drafting involve extensive allocation of expert time, creative resources, and individualized technical analysis, our refund parameters are strictly defined below.
             </p>
           </section>
 
@@ -143,7 +143,7 @@ export default function RefundPolicyPage() {
                   B. Once the Call is Completed (Strictly Non-Refundable)
                 </h3>
                 <p className="mt-1 text-xs sm:text-sm">
-                  Once the consultation call has taken place—in whole or in part—with Ar. Aryan Mehta or our architectural team, the service fee is completely non-refundable. Professional advisory, technical insights, and dedicated architect time are considered fully delivered at the conclusion of the call.
+                  Once the consultation call has taken place—in whole or in part—with AVADASPACE or our architectural team, the service fee is completely non-refundable. Professional advisory, technical insights, and dedicated architect time are considered fully delivered at the conclusion of the call.
                 </p>
               </div>
 
@@ -220,7 +220,7 @@ export default function RefundPolicyPage() {
               </p>
               <ol className="list-decimal list-inside space-y-1.5 pl-2">
                 <li>
-                  Contact us via email at <strong className="text-foreground">contact@studiomehta.com</strong>.
+                  Contact us via email at <strong className="text-foreground">support@avada.space</strong>.
                 </li>
                 <li>
                   Provide your <strong className="text-foreground">Full Name</strong>, <strong className="text-foreground">Phone Number</strong>, and <strong className="text-foreground">Transaction/Order ID</strong> (e.g. Razorpay payment ID starting with <code className="font-mono text-[11px] bg-muted px-1 py-0.5 rounded">pay_...</code>).
@@ -246,7 +246,7 @@ export default function RefundPolicyPage() {
 
             <div className="pt-2 max-w-md">
               <a
-                href="mailto:contact@studiomehta.com"
+                href="mailto:support@avada.space"
                 className="flex items-center gap-3 rounded-xl border border-grid bg-card p-4 hover:border-foreground/30 transition-all group"
               >
                 <div className="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
@@ -255,7 +255,7 @@ export default function RefundPolicyPage() {
                 <div>
                   <div className="text-xs text-muted-foreground">Email Support</div>
                   <div className="font-mono text-xs sm:text-sm font-semibold text-foreground group-hover:underline">
-                    contact@studiomehta.com
+                    support@avada.space
                   </div>
                 </div>
               </a>

@@ -507,7 +507,7 @@ export function ProfileTab() {
                 id="display-name"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                placeholder="e.g. Ar. Aryan Mehta"
+                placeholder="e.g. AVADASPACE"
                 required
               />
             </div>

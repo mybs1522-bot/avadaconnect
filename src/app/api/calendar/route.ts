@@ -131,7 +131,7 @@ export async function POST(req: NextRequest) {
         `📞 Phone: ${phone}`,
         `🛎️ Service: ${serviceName}`,
         ``,
-        `Booked via Studio Mehta Platform`,
+        `Booked via AVADASPACE Platform`,
       ].join("\n"),
       start: {
         dateTime: startTime,

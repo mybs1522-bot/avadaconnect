@@ -20,6 +20,7 @@ const memoryBlockedSlots = new Set<string>(); // "YYYY-MM-DD_HH:MM AM/PM"
 export async function GET() {
   try {
     const supabaseAdmin = getSupabaseAdmin();
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
     const { data, error } = await supabaseAdmin
       .from("service_leads")
       .select(`
@@ -35,6 +36,7 @@ export async function GET() {
           title
         )
       `)
+      .eq("tenant_id", tenantId)
       .not("appointment_date", "is", null)
       .not("appointment_time", "is", null)
       .order("created_at", { ascending: false });
@@ -92,6 +94,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { action, date, time } = body;
     const supabaseAdmin = getSupabaseAdmin();
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
 
     if (!date) {
       return NextResponse.json({ error: "date is required" }, { status: 400 });
@@ -109,6 +112,7 @@ export async function POST(req: NextRequest) {
       const { data: existing } = await supabaseAdmin
         .from("service_leads")
         .select("id")
+        .eq("tenant_id", tenantId)
         .eq("appointment_date", date)
         .eq("appointment_time", time)
         .eq("phone", "0000000000")
@@ -119,6 +123,7 @@ export async function POST(req: NextRequest) {
         const blockId = crypto.randomUUID();
         const { error: insertErr } = await supabaseAdmin.from("service_leads").insert({
           id: blockId,
+          tenant_id: tenantId,
           name: "Admin Blocked Slot",
           phone: "0000000000",
           appointment_date: date,
@@ -147,6 +152,7 @@ export async function POST(req: NextRequest) {
       const { error: delErr } = await supabaseAdmin
         .from("service_leads")
         .delete()
+        .eq("tenant_id", tenantId)
         .eq("appointment_date", date)
         .eq("appointment_time", time)
         .eq("phone", "0000000000");
@@ -169,6 +175,7 @@ export async function POST(req: NextRequest) {
         const { data: existing } = await supabaseAdmin
           .from("service_leads")
           .select("id")
+          .eq("tenant_id", tenantId)
           .eq("appointment_date", date)
           .eq("appointment_time", t)
           .eq("phone", "0000000000")
@@ -178,6 +185,7 @@ export async function POST(req: NextRequest) {
           const blockId = crypto.randomUUID();
           const { error: insertErr } = await supabaseAdmin.from("service_leads").insert({
             id: blockId,
+            tenant_id: tenantId,
             name: "Admin Blocked Slot",
             phone: "0000000000",
             appointment_date: date,
@@ -208,6 +216,7 @@ export async function POST(req: NextRequest) {
       const { error: delErr } = await supabaseAdmin
         .from("service_leads")
         .delete()
+        .eq("tenant_id", tenantId)
         .eq("appointment_date", date)
         .eq("phone", "0000000000");
 

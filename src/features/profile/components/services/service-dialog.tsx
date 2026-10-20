@@ -120,9 +120,11 @@ export function ServiceDialog({
 
         // Fallback to client Supabase
         try {
+          const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
           const { data, error } = await supabase
             .from("service_leads")
             .select("appointment_date, appointment_time, payment_status, phone, name")
+            .eq("tenant_id", tenantId)
             .not("appointment_date", "is", null)
             .not("appointment_time", "is", null);
 
@@ -225,6 +227,7 @@ export function ServiceDialog({
         // Save the lead immediately before payment as 'pending'
         await supabase.from("service_leads").insert({
           id: leadId,
+          tenant_id: process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace",
           name: finalName,
           phone: fullPhone,
           service_id: service.id,
@@ -354,6 +357,7 @@ export function ServiceDialog({
       const leadId = crypto.randomUUID();
       const { error } = await supabase.from("service_leads").insert({
         id: leadId,
+        tenant_id: process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace",
         name: finalName,
         phone: fullPhone,
         service_id: service.id,

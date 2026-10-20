@@ -5,9 +5,11 @@ import { ProjectsGallery } from "./projects-gallery";
 
 export async function Projects() {
   // Fetch project images from Supabase
+  const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
   const { data: images } = await supabase
     .from("project_images")
     .select("*")
+    .eq("tenant_id", tenantId)
     .order("created_at", { ascending: false });
 
   return (

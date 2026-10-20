@@ -213,11 +213,11 @@ export function InvoiceGeneratorTab() {
   const [invoiceTitle, setInvoiceTitle] = useState("TAX INVOICE");
 
   // Business / Architect Branding (Editable & Removable)
-  const [companyName, setCompanyName] = useState("Ar. Aryan Mehta");
-  const [tagline, setTagline] = useState("Studio Mehta & Partners | Architecture & Luxury Interiors");
-  const [contactInfo, setContactInfo] = useState("+91 98201 12233 | contact@studiomehta.com");
-  const [addressInfo, setAddressInfo] = useState("Worli, Mumbai & Indiranagar, Bangalore, India");
-  const [companyGst, setCompanyGst] = useState("07AABCS1429B1Z1");
+  const [companyName, setCompanyName] = useState("AVADASPACE");
+  const [tagline, setTagline] = useState("AVADASPACE | Architecture & Turnkey Interiors");
+  const [contactInfo, setContactInfo] = useState("support@avada.space");
+  const [addressInfo, setAddressInfo] = useState("India");
+  const [companyGst, setCompanyGst] = useState("");
 
   // Visibility & Calculation toggles
   const [showBranding, setShowBranding] = useState(true);
@@ -591,9 +591,11 @@ export function InvoiceGeneratorTab() {
     setLeadsLoading(true);
     setLeadsDialogOpen(true);
     try {
+      const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
       const { data, error } = await supabase
         .from("service_leads")
         .select("*, services(title)")
+        .eq("tenant_id", tenantId)
         .order("created_at", { ascending: false })
         .limit(30);
 
@@ -694,11 +696,11 @@ export function InvoiceGeneratorTab() {
     setInvoiceNumber(inv.invoiceNumber);
     setDate(inv.date || dayjs().format("YYYY-MM-DD"));
     setInvoiceTitle(inv.invoiceTitle || "TAX INVOICE");
-    setCompanyName(inv.companyName || "Ar. Aryan Mehta");
-    setTagline(inv.tagline || "Studio Mehta & Partners | Architecture & Luxury Interiors");
-    setContactInfo(inv.contactInfo || "+91 98201 12233 | contact@studiomehta.com");
-    setAddressInfo(inv.addressInfo || "Worli, Mumbai & Indiranagar, Bangalore, India");
-    setCompanyGst(inv.companyGst ?? "07AABCS1429B1Z1");
+    setCompanyName(inv.companyName || "AVADASPACE");
+    setTagline(inv.tagline || "AVADASPACE | Architecture & Turnkey Interiors");
+    setContactInfo(inv.contactInfo || "support@avada.space");
+    setAddressInfo(inv.addressInfo || "India");
+    setCompanyGst(inv.companyGst ?? "");
     setShowBranding(inv.showBranding ?? true);
     setShowTagline(inv.showTagline ?? true);
     setShowContact(inv.showContact ?? true);
@@ -974,7 +976,7 @@ export function InvoiceGeneratorTab() {
                   <Input
                     value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
-                    placeholder="e.g. Ar. Aryan Mehta"
+                    placeholder="e.g. AVADASPACE"
                     className="h-8 text-xs font-semibold"
                     disabled={!showBranding}
                   />

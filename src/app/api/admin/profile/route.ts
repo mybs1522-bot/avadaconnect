@@ -4,7 +4,7 @@ import { getSupabaseAdmin } from "@/lib/supabase";
 export async function GET() {
   try {
     const supabase = getSupabaseAdmin();
-    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_demo";
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
 
     const { data, error } = await supabase
       .from("profile")

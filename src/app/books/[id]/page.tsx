@@ -152,6 +152,7 @@ export default function BookDetailsPage() {
       try {
         await supabase.from("book_leads").insert({
           id: leadId,
+          tenant_id: process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace",
           email: email.trim(),
           phone: phone.trim(),
           book_id: book.id,
@@ -192,7 +193,7 @@ export default function BookDetailsPage() {
           key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
           amount: book.price * 100,
           currency: "INR",
-          name: "Studio Mehta",
+          name: "AVADASPACE",
           description: book.title,
           order_id: data.orderId,
           handler: async function (response: any) {
@@ -245,6 +246,8 @@ export default function BookDetailsPage() {
       }
     } else {
       const { error } = await supabase.from("book_leads").insert({
+        id: crypto.randomUUID(),
+        tenant_id: process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace",
         email: email.trim(),
         phone: phone.trim(),
         book_id: book.id,

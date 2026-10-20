@@ -14,9 +14,11 @@ import { WriteReviewButton } from "./write-review-button";
 
 export async function Reviews() {
   // Fetch approved reviews from database
+  const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
   const { data: dbReviews } = await supabase
     .from("reviews")
     .select("*")
+    .eq("tenant_id", tenantId)
     .eq("status", "approved")
     .order("created_at", { ascending: false });
 

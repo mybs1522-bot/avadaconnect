@@ -103,7 +103,7 @@ function getWhatsAppUrl(phone: string, serviceTitle: string, clientName: string)
   if (cleaned.length === 10) {
     cleaned = "91" + cleaned;
   }
-  const msg = `Hi ${clientName}, this is Ar. Aryan Mehta (Studio Mehta & Partners) regarding your booking for "${serviceTitle}". Let me know if you have any questions!`;
+  const msg = `Hi ${clientName}, this is AVADASPACE regarding your booking for "${serviceTitle}". Let me know if you have any questions!`;
   return `https://wa.me/${cleaned}?text=${encodeURIComponent(msg)}`;
 }
 

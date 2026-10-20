@@ -4,9 +4,11 @@ import { getSupabaseAdmin } from "@/lib/supabase";
 export async function GET() {
   try {
     const supabaseAdmin = getSupabaseAdmin();
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
     const { data, error } = await supabaseAdmin
       .from("services")
       .select("*")
+      .eq("tenant_id", tenantId)
       .order("display_order", { ascending: true });
 
     if (error) {
@@ -31,6 +33,7 @@ export async function GET() {
         money_received,
         lead_status
       `)
+      .eq("tenant_id", tenantId)
       .eq("payment_status", "completed")
       .order("created_at", { ascending: false });
 
@@ -108,9 +111,15 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ success: true, service: data });
       } else {
         // Insert new service
+        const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
+        const finalPayload = {
+          ...payload,
+          tenant_id: payload.tenant_id || tenantId,
+          id: payload.id || `serv-${Date.now()}-${tenantId.replace("tenant_", "")}`,
+        };
         const { data, error } = await supabaseAdmin
           .from("services")
-          .insert(payload)
+          .insert(finalPayload)
           .select()
           .single();
 

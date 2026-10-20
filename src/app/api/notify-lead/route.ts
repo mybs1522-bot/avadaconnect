@@ -66,13 +66,13 @@ export async function POST(req: NextRequest) {
           </table>
         </div>
         <div style="background: #f9fafb; padding: 16px; text-align: center; color: #9ca3af; font-size: 12px;">
-          Studio Mehta — Lead Notification
+          AVADASPACE — Lead Notification
         </div>
       </div>
     `;
 
     await transporter.sendMail({
-      from: `"Studio Mehta" <${process.env.GMAIL_USER}>`,
+      from: `"AVADASPACE" <${process.env.GMAIL_USER}>`,
       to: process.env.NOTIFY_EMAIL,
       subject: `🔔 New Lead: ${name} — ${serviceName}`,
       html: htmlBody,

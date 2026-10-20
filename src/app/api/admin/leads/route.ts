@@ -27,6 +27,7 @@ const memoryDeadlineStore = new Map<string, string>();
 export async function GET() {
   try {
     const supabaseAdmin = getSupabaseAdmin();
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
     const { data, error } = await supabaseAdmin
       .from("service_leads")
       .select(`
@@ -35,6 +36,7 @@ export async function GET() {
           title
         )
       `)
+      .eq("tenant_id", tenantId)
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -286,10 +288,12 @@ export async function POST(req: NextRequest) {
       memoryDeadlineStore.set(newId, leadData?.deadlineDate || "");
 
       try {
+        const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
         await supabaseAdmin
           .from("service_leads")
           .insert({
             id: newId,
+            tenant_id: tenantId,
             name: leadData?.name?.trim() || "New Lead",
             phone: leadData?.phone?.trim() || "",
             payment_status: "completed",

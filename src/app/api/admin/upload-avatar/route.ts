@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
 
-    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_demo";
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
     const supabase = getSupabaseAdmin();
 
     const bytes = await file.arrayBuffer();

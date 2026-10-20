@@ -250,9 +250,9 @@ const INITIAL_BOOK_LEADS = [
 
 const INITIAL_PROFILE = {
   id: "profile-1",
-  displayName: "Ar. Aryan Mehta",
+  displayName: "AVADASPACE",
   jobTitle: "Founder & Principal Architect",
-  bio: "Principal Architect & Interior Designer",
+  bio: "Founder & Principal Architect at AVADASPACE. Bespoke residential architecture and turnkey interior design.",
   avatar: "/images/avatar.jpg",
   flipSentences: [
     "Luxury Residential Architect",
@@ -260,11 +260,11 @@ const INITIAL_PROFILE = {
     "Sustainable Space Planner",
     "ArchBIZ & BOQ Consultant",
   ],
-  about: `I am Ar. Aryan Mehta, Founder & Principal Architect at **Studio Mehta & Partners**.\n\nWe specialize in bespoke luxury residences, contemporary villas, and end-to-end turnkey interior environments.\n\n**Whether you're planning a new build from ground up, optimizing your floor layout, or need itemized BOQ estimations to prevent costly contractor overcharges, let's connect and craft your space!**`,
-  email: "contact@studiomehta.com",
-  phone: "+91 98201 12233",
-  address: "Mumbai & Bangalore, India",
-  website: "https://studiomehta.com",
+  about: `I am AVADASPACE, Founder & Principal Architect.\n\nWe specialize in bespoke luxury residences, contemporary villas, and end-to-end turnkey interior environments.\n\n**Whether you're planning a new build from ground up, optimizing your floor layout, or need itemized BOQ estimations to prevent costly contractor overcharges, let's connect and craft your space!**`,
+  email: "support@avada.space",
+  phone: "",
+  address: "India",
+  website: "https://avada.space",
 };
 
 const INITIAL_REVIEWS = [

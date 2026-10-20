@@ -74,10 +74,13 @@ export function BooksTab() {
   const fetchBooksAndSales = useCallback(async () => {
     setLoading(true);
 
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
+
     // 1. Fetch books
     const { data: booksData, error: booksError } = await supabase
       .from("books")
       .select("*")
+      .eq("tenant_id", tenantId)
       .order("display_order", { ascending: true });
 
     if (booksError) {
@@ -91,7 +94,8 @@ export function BooksTab() {
     try {
       const { data: leadsData, error: leadsError } = await supabase
         .from("book_leads")
-        .select("book_id, payment_status");
+        .select("book_id, payment_status")
+        .eq("tenant_id", tenantId);
 
       if (!leadsError && leadsData) {
         const statsMap: Record<string, BookSalesStats> = {};
@@ -491,7 +495,21 @@ function BookDialog({
     }
 
     setSaving(true);
-    const payload = {
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
+    const payload: {
+      tenant_id: string;
+      title: string;
+      thumbnail_url: string | null;
+      link: string;
+      display_order: number;
+      is_active: boolean;
+      price: number;
+      pdf_url: string | null;
+      description: string | null;
+      preview_images: string[];
+      id?: string;
+    } = {
+      tenant_id: tenantId,
       title: form.title.trim(),
       thumbnail_url: form.thumbnail_url?.trim() || null,
       link: form.link.trim(),
@@ -507,6 +525,8 @@ function BookDialog({
     if (isEditing) {
       ({ error } = await supabase.from("books").update(payload).eq("id", book.id));
     } else {
+      const newBookId = `book-${Date.now()}-${tenantId.replace("tenant_", "")}`;
+      payload.id = newBookId;
       ({ error } = await supabase.from("books").insert(payload));
     }
 

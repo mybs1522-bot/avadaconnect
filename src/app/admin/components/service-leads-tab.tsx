@@ -92,7 +92,7 @@ function getWhatsAppUrl(phone: string) {
   if (cleaned.length === 10) {
     cleaned = "91" + cleaned;
   }
-  const msg = `Hi, this is Ar. Aryan Mehta (Studio Mehta & Partners). You recently requested a consultation regarding your space. How can we assist you with your design, floor plans, or budget estimation?`;
+  const msg = `Hi, this is AVADASPACE. You recently requested a consultation regarding your space. How can we assist you with your design, floor plans, or budget estimation?`;
   return `https://wa.me/${cleaned}?text=${encodeURIComponent(msg)}`;
 }
 
@@ -181,6 +181,7 @@ export function ServiceLeadsTab() {
     } catch {}
 
     // Fallback to client Supabase
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
     const { data, error } = await supabase
       .from("service_leads")
       .select(`
@@ -189,6 +190,7 @@ export function ServiceLeadsTab() {
           title
         )
       `)
+      .eq("tenant_id", tenantId)
       .order("created_at", { ascending: false });
 
     if (error) {

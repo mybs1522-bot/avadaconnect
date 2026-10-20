@@ -4,9 +4,11 @@ import { getSupabaseAdmin } from "@/lib/supabase";
 export async function GET() {
   try {
     const supabase = getSupabaseAdmin();
+    const tenantId = process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace";
     const { data, error } = await supabase
       .from("reviews")
       .select("*")
+      .eq("tenant_id", tenantId)
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -42,7 +44,7 @@ export async function POST(req: NextRequest) {
 
     const newReview = {
       id: `r_${Date.now()}`,
-      tenant_id: body.tenant_id || process.env.NEXT_PUBLIC_TENANT_ID || "tenant_demo",
+      tenant_id: body.tenant_id || process.env.NEXT_PUBLIC_TENANT_ID || "tenant_avadaspace",
       name: name.trim(),
       role: (role || "Verified Client").trim(),
       content: content.trim(),

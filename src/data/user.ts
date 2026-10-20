@@ -1,32 +1,32 @@
 export const USER = {
-  firstName: "Aryan",
-  lastName: "Mehta",
-  displayName: "Ar. Aryan Mehta",
-  username: "aryanmehta",
-  gender: "male",
-  bio: "Principal Architect & Interior Designer",
+  firstName: "AVADA",
+  lastName: "SPACE",
+  displayName: "AVADASPACE",
+  username: "avadaspace",
+  gender: "other",
+  bio: "Founder & Principal Architect at AVADASPACE. Bespoke residential architecture and turnkey interior design.",
   flipSentences: [
     "Luxury Residential Architect",
     "Turnkey Interior Designer",
     "Sustainable Space Planner",
     "ArchBIZ & BOQ Consultant",
   ],
-  address: "Mumbai & Bangalore, India",
+  address: "India",
   phoneNumber: "", // E.164 format, base64 encoded
-  email: "Y29udGFjdEBzdHVkaW9tZWh0YS5jb20=", // contact@studiomehta.com base64 encoded
-  website: "https://studiomehta.com",
+  email: "c3VwcG9ydEBhdmFkYS5zcGFjZQ==", // support@avada.space base64 encoded
+  website: "https://avada.space",
   otherWebsites: [],
-  dateOfBirth: "1995-04-15", // YYYY-MM-DD
-  jobTitle: "Founder & Principal Architect",
+  dateOfBirth: "1995-01-01", // YYYY-MM-DD
+  jobTitle: "Principal Architect & Interior Designer",
   jobs: [
     {
-      title: "Founder & Principal Architect",
-      company: "Studio Mehta & Partners",
-      website: "https://studiomehta.com",
+      title: "Principal Architect & Interior Designer",
+      company: "AVADASPACE",
+      website: "https://avada.space",
     },
   ],
   about: `
-I am Ar. Aryan Mehta, Founder & Principal Architect at **Studio Mehta & Partners**.
+I am AVADASPACE, Founder & Principal Architect.
 
 We specialize in bespoke luxury residences, contemporary villas, and end-to-end turnkey interior environments. 
 
@@ -35,6 +35,6 @@ We specialize in bespoke luxury residences, contemporary villas, and end-to-end 
   avatar: "/images/avatar.jpg",
   ogImage: "/images/chanhdai-og-image.png?v=250420",
   keywords:
-    "aryan mehta, ar aryan mehta, studio mehta, luxury architect, interior designer, villa architecture, boq estimation, turn-key interiors",
+    "avadaspace, avada space, luxury architect, interior designer, villa architecture, boq estimation, turn-key interiors",
   dateCreated: "2024-01-01",
 };
